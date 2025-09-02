@@ -6,13 +6,15 @@ interface AuthState {
   token: string | null;
   user: any | null;
   isAuthenticated: boolean;
+  userRole: string | null;
 }
 
 export const useAuth = () => {
   const [authState, setAuthState] = useState<AuthState>({
     token: null,
     user: null,
-    isAuthenticated: false
+    isAuthenticated: false,
+    userRole: null
   });
 
   useEffect(() => {
@@ -21,10 +23,12 @@ export const useAuth = () => {
     const user = localStorage.getItem('user');
     
     if (token && user) {
+      const userData = JSON.parse(user);
       setAuthState({
         token,
-        user: JSON.parse(user),
-        isAuthenticated: true
+        user: userData,
+        isAuthenticated: true,
+        userRole: userData.role || null
       });
     }
   }, []);
@@ -36,7 +40,8 @@ export const useAuth = () => {
     setAuthState({
       token,
       user,
-      isAuthenticated: true
+      isAuthenticated: true,
+      userRole: user.role || null
     });
   }, []);
 
@@ -47,7 +52,8 @@ export const useAuth = () => {
     setAuthState({
       token: null,
       user: null,
-      isAuthenticated: false
+      isAuthenticated: false,
+      userRole: null
     });
   }, []);
 
