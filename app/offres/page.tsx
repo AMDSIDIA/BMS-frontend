@@ -34,7 +34,7 @@ function OffresContent() {
   const [offres, setOffres] = useState<Offre[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [selectedOffres, setSelectedOffres] = useState<number[]>([]);
+  const [selectedOffres, setSelectedOffres] = useState<string[]>([]);
   const [viewMode, setViewMode] = useState<'table' | 'cards'>('table');
   const [sortBy, setSortBy] = useState('dateCreation');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');

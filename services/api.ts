@@ -305,7 +305,7 @@ export default {
 
 // Export types for better TypeScript support
 export interface Offre {
-  id: number;
+  id: string;
   // Champs du formulaire d'ajout d'offre
   intituleOffre?: string;
   commentaire?: string;
@@ -360,7 +360,7 @@ export interface Offre {
 }
 
 export interface User {
-  id: number;
+  id: string;
   email: string;
   nom: string;
   prenom: string;
