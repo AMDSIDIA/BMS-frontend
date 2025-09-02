@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import HomeButton from '../../components/HomeButton';
 import ProtectedRoute from '../../components/ProtectedRoute';
 import Layout from '../../components/Layout';
-import { offresSync } from '../../utils/dataSync';
 import { offresAPI } from '../../services/api';
 
 const countries = [
