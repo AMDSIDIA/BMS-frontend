@@ -6,7 +6,6 @@ import Link from 'next/link';
 import HomeButton from '../../components/HomeButton';
 import Layout from '../../components/Layout';
 import { PoleType } from '../../hooks/useGlobalFilters';
-import { initializeTestData } from '../../test-data';
 import AlertBanner from '../../components/AlertBanner';
 import { offresAPI } from '@/services/api';
 
@@ -115,7 +114,6 @@ function SuiviResultatsContent() {
     } else {
       setIsAuthenticated(true);
       // Initialiser les données de test si nécessaire
-      initializeTestData();
       fetchOffres();
       
       // Récupérer le rôle utilisateur et vérifier les permissions
@@ -863,8 +861,8 @@ function SuiviResultatsContent() {
               >
                 Sauvegarder
               </button>
-        </div>
-      </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
