@@ -6,7 +6,10 @@
     "dev": "cross-env NODE_ENV=development next dev -H 0.0.0.0 -p 3000",
     "start": "cross-env NODE_ENV=production next start -H 0.0.0.0 -p 3000",
     "build": "next build",
-    "lint": "next lint"
+    "build:vercel": "next build",
+    "export": "next build && next export",
+    "lint": "next lint",
+    "vercel-build": "next build"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
